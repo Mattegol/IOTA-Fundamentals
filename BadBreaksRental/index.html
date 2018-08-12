@@ -2,6 +2,18 @@
 <html>
     <head>
         <title>Bad Brakes Rental</title>
+        <script src="/socket.io/socket.io.js"></script>
+        <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+        <script>
+            $(function(){
+                var socket = io();
+                socket.on('newAddress', function(address){
+                    $('#mainImage').attr('src', 'pay.png')
+                    $('#mainText').html('Please pay 1 IOTA to the following address:<br/>'+ address)
+                })
+            })
+            
+        </script>
     </head>
     <body>
         <center>
